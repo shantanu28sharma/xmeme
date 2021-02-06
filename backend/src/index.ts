@@ -28,9 +28,9 @@ async function startServer() {
 
 async function startSwaggerServer() {
   const app = express();
-  const swaggerDoc = require('../swagger/doc.json');
+  const swaggerDoc = require('./swagger/doc.json');
   app.use(
-    "/swagger-ui",
+    "./swagger-ui",
     swaggerUi.serve,
     swaggerUi.setup(swaggerDoc)
   );

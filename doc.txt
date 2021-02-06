@@ -1,0 +1,40 @@
+## Downloading the postgresql
+sudo apt-get update
+sudo apt-get -y install postgresql postgresql-constrib
+sudo service postgresql start
+
+## Create Memes database
+sudo -u postgres createdb memes
+
+## install nodejs
+sudo apt-get install -y nodejs
+sudo apt install -y npm
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+## yarn
+sudo npm install --global yarn
+
+## append to path
+echo PATH=$PATH:/usr/local/lib/node_modules/yarn/bin >> ~/.bashrc
+
+## install serve
+sudo npm install -g serve
+
+cd frontend && yarn install && yarn build
+
+## Go back
+cd ..
+
+## backend build
+cd backend && yarn install && yarn build
+
+## go back
+cd ..
+
+## Start the servers in detached mode
+
+serve -s frontend/build > /tmp/frontendlogs.txt &
+node backend/dist/index.js > /tmp/backend-log.txt &
+
