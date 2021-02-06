@@ -16,7 +16,7 @@
         "*": ["node_modules/*"]
       }
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "src/configs/*.json", "src/swagger/*.json"],
     "exclude": ["node_modules", "tests", "dist"]
 }
   
