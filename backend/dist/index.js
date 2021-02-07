@@ -60,10 +60,10 @@ function startSwaggerServer() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = express_1.default();
         const swaggerDoc = require('./swagger/doc.json');
-        app.use("./swagger-ui", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDoc));
+        app.use("/swagger-ui", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDoc));
         http_1.default.createServer(app).listen(configs_1.default.swaggerport);
     });
 }
-//startServer();
 startSwaggerServer();
+startServer();
 //# sourceMappingURL=index.js.map
