@@ -13,7 +13,7 @@ const Header = () => {
             if(url==="" || caption==="" || name===""){
                 throw 'err';
             }
-            if(!url.includes("jpg") || !url.includes("jpeg") || !url.includes("png")){
+            if(!url.includes("jpg") && !url.includes("jpeg") && !url.includes("png")){
                 throw 'err';
             }
             await axios.post('memes', {
