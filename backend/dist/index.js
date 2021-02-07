@@ -64,6 +64,6 @@ function startSwaggerServer() {
         http_1.default.createServer(app).listen(configs_1.default.swaggerport);
     });
 }
-startServer();
+//startServer();
 startSwaggerServer();
 //# sourceMappingURL=index.js.map

@@ -30,12 +30,12 @@ async function startSwaggerServer() {
   const app = express();
   const swaggerDoc = require('./swagger/doc.json');
   app.use(
-    "./swagger-ui",
+    "/swagger-ui",
     swaggerUi.serve,
     swaggerUi.setup(swaggerDoc)
   );
   http.createServer(app).listen(config.swaggerport);
 }
 
-startServer();
 startSwaggerServer();
+startServer();
