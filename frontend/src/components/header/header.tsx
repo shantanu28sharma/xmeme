@@ -13,13 +13,15 @@ const Header = () => {
             if(url==="" || caption==="" || name===""){
                 throw 'err';
             }
+            if(!url.includes("jpg") || !url.includes("jpeg") || !url.includes("png")){
+                throw 'err';
+            }
             await axios.post('memes', {
                     name, url, caption
             });
             window.location.reload();
         }
         catch(e) {
-            console.log(e)
             if(e==='err'){
                 setErr("Please provide proper input");
             }
@@ -28,7 +30,7 @@ const Header = () => {
             }
             setTimeout(()=>{
                 setErr("")
-            }, 4000)
+            }, 2000)
             return;
         } 
     }

@@ -27,6 +27,9 @@ function Card(props: {url: string, caption: string, Name: string, id: number}) {
             if(url==="" || caption===""){
                 throw new Error("err");
             }
+            if(!url.includes("jpg") || !url.includes("jpeg") || !url.includes("png")){
+                throw 'err';
+            }
             await axios.patch('memes/'+props.id, {
                     url,
                     caption
@@ -39,7 +42,7 @@ function Card(props: {url: string, caption: string, Name: string, id: number}) {
             setErr("Please provide proper input");
             setTimeout(()=>{
                 setErr("")
-            }, 4000)
+            }, 2000)
             return;
         }        
     }
