@@ -38,7 +38,7 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <a className="nav-link" href="http://18.224.109.88/swagger-ui" style={{color: "white"}}>Swagger</a>
+                    <a className="nav-link" href="/swagger-ui" style={{color: "white"}}>Swagger</a>
                 </li>
                 </ul>
                 <NavDropdown title="Create Meme" id="collasible-nav-dropdown" style={{marginRight:"5px"}}>

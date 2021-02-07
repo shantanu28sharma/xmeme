@@ -20,7 +20,6 @@ async function startServer() {
       },
     })
   );
-  app.use(cors());
   app.use("/", routes);
   await sync();
   http.createServer(app).listen(config.port);

@@ -38,7 +38,6 @@ const routes_1 = __importDefault(require("./routes"));
 const configs_1 = __importDefault(require("./configs"));
 const postgres_1 = require("./utils/postgres");
 const http_1 = __importDefault(require("http"));
-const cors_1 = __importDefault(require("cors"));
 const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -50,7 +49,6 @@ function startServer() {
                 req.rawBody = buf;
             },
         }));
-        app.use(cors_1.default());
         app.use("/", routes_1.default);
         yield postgres_1.sync();
         http_1.default.createServer(app).listen(configs_1.default.port);
