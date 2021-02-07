@@ -1,7 +1,10 @@
 ## Downloading the postgresql
-sudo apt-get update
-sudo apt-get -y install postgresql postgresql-constrib
+sudo apt update
+sudo apt -y install postgresql postgresql-constrib
 sudo service postgresql start
+
+## Nginx install
+sudo apt install -y nginx
 
 ## Create Memes database
 sudo -u postgres createdb memes
