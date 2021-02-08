@@ -2,7 +2,7 @@
     "port": 8081,
     "database": "memes",
     "user": "postgres",
-    "password": "happyholi",
+    "password": "password",
     "host": "localhost",
     "dbport": 5432,
     "swaggerport": 8080

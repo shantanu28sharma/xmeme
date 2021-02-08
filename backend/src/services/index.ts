@@ -5,7 +5,13 @@ let previously_fetched: Array<any>|null = null;
 export const fetch = async({id}:any) => {
     try {
       if(id){
-        return Meme.findOne({where:{id}, attributes:['id', 'url', 'caption', 'name']})
+        let meme = await Meme.findOne({where:{id}, attributes:['id', 'url', 'caption', 'name']});
+	if(meme){
+		return meme;
+	}
+	else{
+		throw "Meme not found";
+	}
       }
       else{
         if(previously_fetched){

@@ -18,7 +18,13 @@ let previously_fetched = null;
 const fetch = ({ id }) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (id) {
-            return memes_1.default.findOne({ where: { id }, attributes: ['id', 'url', 'caption', 'name'] });
+            let meme = yield memes_1.default.findOne({ where: { id }, attributes: ['id', 'url', 'caption', 'name'] });
+            if (meme) {
+                return meme;
+            }
+            else {
+                throw "Meme not found";
+            }
         }
         else {
             if (previously_fetched) {

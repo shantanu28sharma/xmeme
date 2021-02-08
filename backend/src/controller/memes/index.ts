@@ -6,7 +6,7 @@ export const list = async (req: Request, res: Response) => {
     const _memes = await fetch(req.params);
     return res.status(200).json(_memes);
   } catch {
-    return res.status(400).json({err: "Malformed Request"});
+    return res.status(404).json({err: "Meme doesn't exist"});
   }
 };
 
@@ -18,7 +18,7 @@ export const create = async (req: Request, res: Response) => {
     }
     return res.status(200).json({id:_res.id});
   } catch {
-    return res.status(400).json({err: "Malformed Request"});
+    return res.status(404).json({err: "Malformed Request"});
   }
 };
 
@@ -33,6 +33,6 @@ export const update = async (req: Request, res: Response) => {
     }
   }
   catch {
-    return res.status(400).json({err: "Malformed Request"});
+    return res.status(404).json({err: "Malformed Request"});
   }
 }

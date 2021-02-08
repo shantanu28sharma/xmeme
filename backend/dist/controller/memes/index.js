@@ -17,7 +17,7 @@ const list = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         return res.status(200).json(_memes);
     }
     catch (_a) {
-        return res.status(400).json({ err: "Malformed Request" });
+        return res.status(404).json({ err: "Meme doesn't exist" });
     }
 });
 exports.list = list;
@@ -30,7 +30,7 @@ const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         return res.status(200).json({ id: _res.id });
     }
     catch (_b) {
-        return res.status(400).json({ err: "Malformed Request" });
+        return res.status(404).json({ err: "Malformed Request" });
     }
 });
 exports.create = create;
@@ -45,7 +45,7 @@ const update = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
     }
     catch (_c) {
-        return res.status(400).json({ err: "Malformed Request" });
+        return res.status(404).json({ err: "Malformed Request" });
     }
 });
 exports.update = update;
